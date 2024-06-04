@@ -85,5 +85,7 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. Di sini, kita menggunakan RwLock dibanding Mutex karena RwLock mendukung pembacaan data oleh banyak thread sedangkan Mutex hanya mendukung pembacaan data oleh satu thread saja. Karena itu, RwLock lebih cocok digunakan agar kita dapat menggunakan multi-threading tanpa khawatir.
+2. Rust tidak memperbolehkan mutasi terhadap suatu variabel statis untuk mencegah race condition sehingga membuat multi-threading lebih aman. Jika kita tetap ingin memutasi variabelnya, kita dapat menggunakan lazy static. Dengan bantuan lazy static, programmer dapat memutasi variabel statis secara aman dalam multi-threading.
 
 #### Reflection Subscriber-2
